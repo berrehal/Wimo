@@ -1,1 +1,171 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="Wimo — تجربة رقمية جديدة، مصممة لتكون بسيطة وجميلة وقريبة منك.">
+  <title>Wimo — البساطة، بشكل جديد</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Small finishing touches for Wimo's own visual identity. */
+    :root { --accent: #a997ff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Arabic", Tahoma, sans-serif; }
+    .nav { direction: rtl; }
+    .brand-mark { border-radius: 50%; background: linear-gradient(145deg,#fff,#c8c0ff); }
+    .brand-mark::after { content: "w"; font-weight: 800; }
+    .brand-mark { font-size: 0; }
+    .hero h1, .statement h2, .closing h2, .feature-copy h3 { letter-spacing: -.045em; }
+    .hero-copy { line-height: 1.8; }
+    .eyebrow { letter-spacing: .02em; }
+    .device-screen { direction: rtl; }
+    .screen-top { direction: ltr; }
+    .feature-copy { right: 48px; left: 48px; }
+    .reveal { will-change: transform, opacity; }
+    .device { animation: device-rise 1.2s cubic-bezier(.2,.7,.2,1) .15s both, device-float 5s ease-in-out 1.4s infinite; }
+    .orb-left { animation: orb-drift 7s ease-in-out infinite alternate; }
+    .orb-right { animation: orb-drift 8s ease-in-out -2s infinite alternate-reverse; }
+    .orbit { animation: orbit-turn 22s linear infinite; }
+    .orbit-b { animation-direction: reverse; animation-duration: 17s; }
+    .primary-button:focus-visible, .nav a:focus-visible, .menu-button:focus-visible { outline: 2px solid #b9aaff; outline-offset: 4px; }
+    .menu-button { color: white; cursor: pointer; }
+    .feature-card { isolation: isolate; }
+    .feature-card::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0; background: linear-gradient(135deg,rgba(255,255,255,.13),transparent 42%); transition: opacity .5s; }
+    .feature-card:hover::after { opacity: 1; }
+    .feature-copy, .feature-card > .interface-art, .feature-card > .orbit-art, .feature-card > .light-sphere { z-index: 2; }
+    .closing .primary-button { margin-top: 20px; }
+    footer { direction: rtl; }
+    @keyframes device-rise { from { opacity: 0; transform: translateX(50%) translateY(55px) rotateY(-7deg) scale(.96); } to { opacity: 1; transform: translateX(50%) translateY(0) rotateY(-7deg) scale(1); } }
+    @keyframes device-float { 0%,100% { margin-bottom: 0; } 50% { margin-bottom: 12px; } }
+    @keyframes orb-drift { from { transform: translate3d(0,0,0) scale(.96); } to { transform: translate3d(12px,-18px,0) scale(1.05); } }
+    @keyframes orbit-turn { to { rotate: 360deg; } }
+    @media (max-width:760px) {
+      .feature-copy { top: 32px; right: 28px; left: 28px; }
+      .nav-links { direction: rtl; }
+      .device { animation: device-rise 1.2s cubic-bezier(.2,.7,.2,1) .15s both, device-float 5s ease-in-out 1.4s infinite; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#home" aria-label="Wimo - الرئيسية"><span class="brand-mark" aria-hidden="true">W</span><span>Wimo</span></a>
+    <nav class="nav-links" id="site-navigation" aria-label="التنقل الرئيسي">
+      <a href="#experience">التجربة</a>
+      <a href="#design">التصميم</a>
+      <a href="#privacy">الخصوصية</a>
+      <a href="#start">ابدأ الآن</a>
+    </nav>
+    <button class="menu-button" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="site-navigation">
+      <span></span><span></span>
+    </button>
+  </header>
 
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <span class="hero-glow glow-one" aria-hidden="true"></span>
+      <span class="hero-glow glow-two" aria-hidden="true"></span>
+      <p class="eyebrow reveal">تعرّف على Wimo</p>
+      <h1 class="reveal" id="hero-title">كل ما تحتاجه.<br><span>ببساطة أجمل.</span></h1>
+      <p class="hero-copy reveal">تجربة رقمية جديدة تجمع ما تحب في مكان واحد، بتصميم هادئ وسهل الاستخدام، صُممت لتكون جزءًا من يومك.</p>
+      <a class="primary-button reveal" href="#experience">اكتشف Wimo <span aria-hidden="true">←</span></a>
+      <div class="device-stage" aria-label="معاينة تصميم Wimo على الهاتف">
+        <div class="orb orb-left" aria-hidden="true"></div>
+        <div class="orb orb-right" aria-hidden="true"></div>
+        <div class="device">
+          <div class="device-camera" aria-hidden="true"></div>
+          <div class="device-screen">
+            <div class="screen-top"><span>9:41</span><span class="small-brand">Wimo</span></div>
+            <div class="screen-ring"><span>w</span></div>
+            <p>مساحتك.<br>على طريقتك.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement section-pad" id="experience">
+      <p class="eyebrow reveal">تفاصيل تصنع الفرق</p>
+      <h2 class="reveal">أقل تعقيدًا.<br><span>أكثر مما تحب.</span></h2>
+      <p class="hero-copy reveal">كل تفصيلة في Wimo لها هدف: أن تجعل تجربتك أوضح، أسرع، وأقرب إليك.</p>
+    </section>
+
+    <section class="features section-pad" id="design" aria-label="مزايا Wimo">
+      <article class="feature-card feature-large reveal">
+        <div class="feature-copy">
+          <p class="eyebrow">واجهة تنسجم معك</p>
+          <h3>مساحة واحدة.<br>إمكانات أكثر.</h3>
+        </div>
+        <div class="interface-art" aria-hidden="true">
+          <div class="art-panel panel-back"><div class="panel-icon">W</div><div class="panel-lines"><i></i><i></i><i></i></div></div>
+          <div class="art-panel panel-main"><div class="panel-icon">w</div><div class="panel-lines"><i></i><i></i><i></i></div></div>
+        </div>
+      </article>
+      <article class="feature-card feature-dark reveal" id="privacy">
+        <div class="feature-copy">
+          <p class="eyebrow">خصوصيتك أولًا</p>
+          <h3>أنت<br>تتحكم.</h3>
+        </div>
+        <div class="orbit-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit-core">W</div></div>
+      </article>
+      <article class="feature-card feature-light reveal">
+        <div class="feature-copy">
+          <p class="eyebrow">مصممة لتبقى بسيطة</p>
+          <h3>جمالٌ<br>في كل تفصيلة.</h3>
+        </div>
+        <div class="light-sphere" aria-hidden="true"><span>Wimo</span></div>
+      </article>
+    </section>
+
+    <section class="closing section-pad" id="start">
+      <p class="eyebrow reveal">رحلتك تبدأ هنا</p>
+      <h2 class="reveal">جاهز لتجربة<br>Wimo؟</h2>
+      <p class="hero-copy reveal">خطوة بسيطة نحو تجربة رقمية مختلفة.</p>
+      <a class="primary-button reveal" href="#home">لنبدأ <span aria-hidden="true">←</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">W</span><span>Wimo</span></a>
+    <p>© <span id="year"></span> Wimo. صُممت بعناية.</p>
+  </footer>
+
+  <script>
+    (() => {
+      const menuButton = document.querySelector('.menu-button');
+      const nav = document.querySelector('.nav-links');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'فتح القائمة' : 'إغلاق القائمة');
+        nav.classList.toggle('open', !isOpen);
+      });
+      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'فتح القائمة');
+      }));
+
+      const revealItems = document.querySelectorAll('.reveal');
+      if (reducedMotion || !('IntersectionObserver' in window)) {
+        revealItems.forEach(item => item.classList.add('visible'));
+      } else {
+        const observer = new IntersectionObserver((entries, currentObserver) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              currentObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.14 });
+        revealItems.forEach(item => observer.observe(item));
+      }
+    })();
+  </script>
+</body>
+</html>
